@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import { sendSignInLinkToEmail } from "@firebase/auth";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify";
 
 import { auth } from "../../firebase";
 
@@ -14,7 +12,7 @@ const Register = () => {
     const actionCodeSettings = {
       // URL you want to redirect back to. The domain (www.example.com) for this
       // URL must be in the authorized domains list in the Firebase Console.
-      url: "http://localhost:3000/register/complete",
+      url: process.env.REACT_APP_REGISTER_REDIRECT_URL,
       handleCodeInApp: true,
     };
 
@@ -51,7 +49,7 @@ const Register = () => {
       <div className="row">
         <div className="col-md-6 offset-md-3">
           <h4>Register</h4>
-          <ToastContainer />
+
           {registerForm()}
         </div>
       </div>
