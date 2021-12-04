@@ -38,7 +38,8 @@ const Register = () => {
         onChange={(e) => setEmail(e.target.value)}
         autoFocus
       />
-      <button type="submit" className="btn btn-raised">
+      <br />
+      <button type="submit" className="btn btn-primary">
         Register
       </button>
     </form>
@@ -49,7 +50,6 @@ const Register = () => {
       <div className="row">
         <div className="col-md-6 offset-md-3">
           <h4>Register</h4>
-
           {registerForm()}
         </div>
       </div>
